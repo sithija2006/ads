@@ -46,6 +46,9 @@ if (isset($_GET['api'])) {
 <title>World News</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- FIX FAVICON 404 -->
+<link rel="icon" href="data:,">
+
 <style>
 body {
   margin: 0;
@@ -158,10 +161,10 @@ async function loadNews() {
   loading = true;
   loader.style.display = "block";
 
-  const res = await fetch(
-    `index.php?api=1&page=${page}&pageSize=9&country=${country}`
-  );
+  // ABSOLUTE URL to avoid InfinityFree ads hijacking
+  const apiUrl = `${location.origin}${location.pathname}?api=1&page=${page}&pageSize=9&country=${country}`;
 
+  const res = await fetch(apiUrl);
   const data = await res.json();
 
   loader.style.display = "none";
