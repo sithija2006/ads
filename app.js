@@ -10,8 +10,7 @@ async function loadNews() {
   loading = true;
   loader.style.display = "block";
 
-  // Proxy URL (Cloudflare Worker)
-  const url = `https://YOUR_WORKER_URL/?page=${page}&country=${country}`;
+  const url = `https://4dc81087.ads-4z6.pages.dev/?page=${page}&country=${country}`;
 
   const res = await fetch(url);
   const data = await res.json();
@@ -56,5 +55,3 @@ document.getElementById("darkBtn").addEventListener("click", () => {
 });
 
 loadNews();
-
-
