@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World News</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>World News</h1>
+    <p>Select a country to view news</p>
+  </div>
+
+  <div class="header-right">
+    <select id="country-select">
+      <option value="us">United States</option>
+      <option value="lk">Sri Lanka</option>
+      <option value="in">India</option>
+      <option value="gb">United Kingdom</option>
+      <option value="au">Australia</option>
+    </select>
+
+    <button id="dark-toggle">Dark Mode</button>
+  </div>
+</header>
+
+<main>
+  <div class="news-grid" id="news-container"></div>
+  <div id="loader">Loading news...</div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
